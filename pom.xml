@@ -10,6 +10,8 @@
   <packaging>jar</packaging>
 
   <properties>
+    <maven-checkstyle-plugin.version>3.2.2</maven-checkstyle-plugin.version>
+    <spotbugs-maven-plugin.version>4.7.2.1</spotbugs-maven-plugin.version>
     <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
     <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
     <org.projectlombok.version>1.18.24</org.projectlombok.version>
@@ -151,6 +153,23 @@
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${maven-checkstyle-plugin.version}</version>
+        <configuration>
+          <violationSeverity>warning</violationSeverity>
+          <failsOnError>true</failsOnError>
+          <failOnViolation>true</failOnViolation>
+          <consoleOutput>true</consoleOutput>
+          <configLocation>google_checks.xml</configLocation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>${spotbugs-maven-plugin.version}</version>
       </plugin>
     </plugins>
   </build>
