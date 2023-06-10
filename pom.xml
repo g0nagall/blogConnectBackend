@@ -25,6 +25,7 @@
     <org.maven-compiler-plugin.version>3.8.1</org.maven-compiler-plugin.version>
     <spring-boot-maven-plugin.version>2.7.4</spring-boot-maven-plugin.version>
     <nimbus-jose-jwt.version>9.31</nimbus-jose-jwt.version>
+    <selenium-java.version>4.8.1</selenium-java.version>
   </properties>
 
   <dependencyManagement>
@@ -123,6 +124,11 @@
       <artifactId>mockito-inline</artifactId>
       <version>${org.mockito-inline.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium-java.version}</version>
     </dependency>
   </dependencies>
 
